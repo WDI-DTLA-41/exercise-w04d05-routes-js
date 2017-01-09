@@ -1,7 +1,11 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser');
-app.use(bodyParser());
+// app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 // When a user visits the root of your application
 // the user should see...
