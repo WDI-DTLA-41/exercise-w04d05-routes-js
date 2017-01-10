@@ -56,7 +56,6 @@ app.post('/dumb_waiter', function(req, res) {
   if (req.body.visit === 'hide') {
     res.redirect('/curious?visit=hide');
   }
-   res.send('Something is wrong ' + req.body.checked);
 });
 
 app.get('/curious', function(req, res) {
