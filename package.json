@@ -4,7 +4,8 @@
   "description": "Let's practice routing HTTP requests with our server.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "server.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Hesai69/exercise-w04d05-routes-js/issues"
   },
-  "homepage": "https://github.com/Hesai69/exercise-w04d05-routes-js#readme"
+  "homepage": "https://github.com/Hesai69/exercise-w04d05-routes-js#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2"
+  }
 }

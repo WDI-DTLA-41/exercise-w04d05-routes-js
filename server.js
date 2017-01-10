@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 var port = 3000;
+
+app.use(bodyParser.urlencoded({entended: true}));
+app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
   var welcome = '<h1>Hello and Welcome!</h1>';
@@ -46,13 +50,13 @@ app.get('/characters/cheshire_cat', function(req, res) {
 });
 
 app.post('/dumb_waiter', function(req, res) {
-  if (req.body.value === 'show') {
+  if (req.body.visit === "show") {
     res.redirect('/curious?visit=show');
   }
-   if (req.body.name === 'hide') {
+  if (req.body.visit === 'hide') {
     res.redirect('/curious?visit=hide');
-   }
-   res.send('Something is wrong ' + req.query.value);
+  }
+   res.send('Something is wrong ' + req.body.checked);
 });
 
 app.get('/curious', function(req, res) {
@@ -60,7 +64,7 @@ app.get('/curious', function(req, res) {
     res.send('<h1>=^..^=</h1>');
   }
    if (req.query.visit === 'hide') {
-    res.send('</h1>:)</h1>');
+    res.send('<h1>:)</h1>');
    }
 });
 
